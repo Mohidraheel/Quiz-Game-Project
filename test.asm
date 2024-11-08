@@ -29,7 +29,7 @@ options8 byte "1-Yes 2-No 3-Maybe 4-Not sure", 0
 options9 byte "1-2 2-3 3-4 4-5", 0
 
 optionsArray dd options0, options1, options2, options3, options4, options5, options6, options7, options8, options9
-string7 "Thank You for Playing",0
+string7 byte "Thank You for Playing",0
 .code
 main PROC
 
