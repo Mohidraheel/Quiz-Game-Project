@@ -112,7 +112,7 @@ inc score
 
 noInc :
 inc esi
-loop L7 ; The loop handles the increment, so no need to increment esi manually here.
+loop L7
 
 call crlf
 call crlf
@@ -149,7 +149,7 @@ inc score
 
 noInc2 :
 inc esi
-loop L8 ; Again, loop instruction takes care of the incrementing.
+loop L8
 
 call crlf
 call crlf
