@@ -12,6 +12,7 @@ members byte "Mohid Raheel Khan (23K-3000) -- Ali Mobin (23K-0622) -- Hani Ali (
 wrong byte "Incorrect input. Please enter correct number of level (1 or 2).", 0
 tries byte "Attempts left: " , 0
 invalidI byte "Invalid input. No attempts left! Cannot enter into the game." , 0
+str12 BYTE "The calculated percentage is ",0
 
 q0 byte "Q1-What is the capital of France?", 0
 q1 byte "Q2-What is 2 + 2?", 0
@@ -69,6 +70,7 @@ optionsArray2 dd options10, options11, options12, options13, options14, options1
 
 
 string8 byte "Select Difficulty (1||2):",0
+str13 byte "%",0
 difficulty dword ?
 string9 byte "Enter Your RollNumber:",0
 rollbuffer byte 30 dup(?),0
@@ -217,14 +219,25 @@ call writestring
 mov edx,OFFSET string11
 call writestring
 call writedec
+mov ebx,100
+mov ecx,10
+mul ebx
+div ecx
 call crlf
-cmp eax,2
+call crlf
+mov edx,OFFSET str12
+call writestring
+call writedec
+mov edx,OFFSET str13
+call writestring
+call crlf
+cmp eax,20
 jle l1
-cmp eax,5
+cmp eax,50
 jle l2
-cmp eax,8
+cmp eax,80
 jle l3
-cmp eax,10
+cmp eax,100
 jle l4
 
 l1:
